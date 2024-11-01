@@ -12,7 +12,7 @@ type TaskProps = TaskDTO & {
 
 
 export function Task({id,title, isCompleted, onTaskDone, onTaskRemove}: TaskProps) {
-  const [isPressed, setIsPressed] = useState(true)
+ 
 
   return (
     <View style={styles.taskContainer}>
@@ -42,13 +42,13 @@ export function Task({id,title, isCompleted, onTaskDone, onTaskRemove}: TaskProp
 
         <TouchableOpacity onPress={() => {
            onTaskRemove(id);
-           setIsPressed(false);
+           
           }}>
           <MaterialCommunityIcons 
             name="trash-can-outline" 
             size={20} 
-            color={isPressed ? theme.colors['gray-300'] : 
-              theme.colors.danger }
+            color= {theme.colors['gray-300']}
+              
           />
         </TouchableOpacity>
       </View>
